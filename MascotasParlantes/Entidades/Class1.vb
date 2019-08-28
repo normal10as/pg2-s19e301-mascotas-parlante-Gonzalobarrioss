@@ -10,13 +10,10 @@ Public Class Loro
     End Property
 
     Private _edad As Short
-    Public Property Edad As Short
+    Public ReadOnly Property Edad As Short
         Get
             Return _edad
         End Get
-        Set(value As Short)
-
-        End Set
     End Property
 
     Private _fechaNacimiento As Date
