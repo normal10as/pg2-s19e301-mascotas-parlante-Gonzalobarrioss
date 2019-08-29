@@ -43,7 +43,15 @@ Public Class Loro
     End Property
 
     Function calcularEdad(value As Date) As UShort
-
+        Dim hoy As Date = Date.Now()
+        Dim edad As Int16
+        edad = (hoy.Year) - (value.Year)
+        If (hoy.Month < value.Month) Then
+            edad -= 1
+        ElseIf hoy.Month = value.Month And hoy.Day < value.Day Then
+            edad -= 1
+        End If
+        Return edad
     End Function
 
     Sub escuchar(frase As String)

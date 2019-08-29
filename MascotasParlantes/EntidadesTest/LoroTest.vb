@@ -3,11 +3,13 @@ Imports Entidades
 
 
 Module LoroTest
+    Public loro1 As Loro
     Sub Main(args As String())
-        Dim loro1 As Loro
+
         loro1 = New Loro()
         loro1.Nombre = "pepe"
-        loro1.FechaNacimiento = #01-01-2000#
+        loro1.FechaNacimiento = #08-30-2000#
+
         Console.WriteLine("Mostrando metodo get")
         Console.WriteLine(loro1.Nombre)
         Console.WriteLine(loro1.FechaNacimiento)
@@ -17,7 +19,7 @@ Module LoroTest
         Console.WriteLine(loro1.ToString())
 
         Console.WriteLine("Calcular edad")
-        loro1.calcularEdad(loro1.FechaNacimiento)
+        Console.WriteLine(loro1.calcularEdad(loro1.FechaNacimiento))
 
         'Cargo a la memoria las frases'
         loro1.escuchar("papita ")
@@ -29,6 +31,6 @@ Module LoroTest
         Console.WriteLine(loro1.hablar())
         Console.WriteLine(loro1.hablar())
         Console.WriteLine(loro1.hablar())
-
+        cotorra()
     End Sub
 End Module
