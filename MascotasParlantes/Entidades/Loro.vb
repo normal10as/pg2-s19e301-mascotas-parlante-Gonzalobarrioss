@@ -1,10 +1,16 @@
 Public Class Loro
-    Private _memoria As String
-    Public Property Memoria As String
+
+    Public Sub New()
+        Memoria = New Queue(Of String)
+        Nombre = ""
+        FechaNacimiento = Date.Today()
+    End Sub
+    Private _memoria As Queue(Of String)
+    Public Property Memoria As Queue(Of String)
         Get
             Return _memoria
         End Get
-        Set(value As String)
+        Set(value As Queue(Of String))
             _memoria = value
         End Set
     End Property
@@ -36,7 +42,6 @@ Public Class Loro
         End Set
     End Property
 
-    Public Sub New()
-
-    End Sub
+    Function calcularEdad(value As Date) As UShort
+    End Function
 End Class
