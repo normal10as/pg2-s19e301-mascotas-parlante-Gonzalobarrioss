@@ -43,5 +43,23 @@ Public Class Loro
     End Property
 
     Function calcularEdad(value As Date) As UShort
+
+    End Function
+
+    Sub escuchar(frase As String)
+        Memoria.Enqueue(frase)
+    End Sub
+
+    Function ToString() As String
+        Return Nombre
+    End Function
+
+    Private frase As String
+    Function hablar() As String
+        If Memoria.Count <> 0 Then
+            frase += Memoria.Dequeue()
+            Return frase
+        End If
+        Return ""
     End Function
 End Class
