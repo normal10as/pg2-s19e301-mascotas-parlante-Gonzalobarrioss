@@ -4,6 +4,7 @@ Public Module CotorraTest
     Sub cotorra()
         Dim cotorra1 As Cotorra
         cotorra1 = New Cotorra()
+        cotorra1.FechaNacimiento = #08-30-2000#
         cotorra1.escuchar("papita ")
         cotorra1.escuchar("nada")
         cotorra1.escuchar("pa la cotorra")
