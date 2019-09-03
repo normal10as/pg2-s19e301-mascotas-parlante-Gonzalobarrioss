@@ -4,22 +4,16 @@ Imports Entidades
 
 Module LoroTest
     Public loro1 As Loro
-    Sub Main(args As String())
+    Sub Loro()
 
         loro1 = New Loro()
         loro1.Nombre = "pepe"
         loro1.FechaNacimiento = #08-30-2000#
 
-        Console.WriteLine("Mostrando metodo get")
-        Console.WriteLine(loro1.Nombre)
-        Console.WriteLine(loro1.FechaNacimiento)
-        Console.WriteLine(loro1.Edad)
-
-        Console.WriteLine("Probando sobrecarga ToString():")
-        Console.WriteLine(loro1.ToString())
-
-        Console.WriteLine("Calcular edad")
-        Console.WriteLine(loro1.calcularEdad(loro1.FechaNacimiento))
+        Console.WriteLine("Loro")
+        Console.WriteLine("Nombre: " & loro1.Nombre)
+        Console.WriteLine("Nacimiento: " & loro1.FechaNacimiento)
+        Console.WriteLine("Edad: " & loro1.Edad)
 
         'Cargo a la memoria las frases'
         loro1.escuchar("papita ")
@@ -31,6 +25,9 @@ Module LoroTest
         Console.WriteLine(loro1.hablar())
         Console.WriteLine(loro1.hablar())
         Console.WriteLine(loro1.hablar())
-        cotorra()
+
+
+        Console.WriteLine("Probando sobrecarga ToString():")
+        Console.WriteLine(loro1.ToString())
     End Sub
 End Module

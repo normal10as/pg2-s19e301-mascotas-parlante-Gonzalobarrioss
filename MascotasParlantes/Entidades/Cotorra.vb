@@ -1,23 +1,23 @@
 ﻿Public Class Cotorra
     Inherits Loro
+
     Public Sub New()
-        Memoria = New Queue(Of String)
-        Nombre = ""
-        FechaNacimiento = Date.Today()
+        _memoria = New Queue(Of String)
     End Sub
 
+    Private _memoria As Queue(Of String)
     Private _edadHumana As UShort
-    Public ReadOnly Property EdadHumana As UShort
+    Public ReadOnly Property edadHumana As UShort
         Get
-            Return (2 * calcularEdad(FechaNacimiento))
+            Return 2 * Edad
         End Get
     End Property
 
-    Private On_Off As Integer = 0
-    Shadows Sub escuchar(frase As String)
-        If On_Off Mod 2 = 0 Then
-            Memoria.Enqueue(frase)
+    Dim OnOff As Integer = 0
+    Sub escuchar(frase As String)
+        If OnOff Mod 2 = 0 Then
+            _memoria.Enqueue(frase)
         End If
-        On_Off += 1
+        OnOff += 1
     End Sub
 End Class

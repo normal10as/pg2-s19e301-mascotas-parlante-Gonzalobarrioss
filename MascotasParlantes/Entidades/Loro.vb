@@ -1,24 +1,17 @@
 Public Class Loro
 
     Public Sub New()
-        Memoria = New Queue(Of String)
+        _memoria = New Queue(Of String)
         Nombre = ""
         FechaNacimiento = Date.Today()
     End Sub
     Private _memoria As Queue(Of String)
-    Public Property Memoria As Queue(Of String)
-        Get
-            Return _memoria
-        End Get
-        Set(value As Queue(Of String))
-            _memoria = value
-        End Set
-    End Property
+
 
     Private _edad As Short
     Public ReadOnly Property Edad As Short
         Get
-            Return _edad
+            Return calcularEdad(FechaNacimiento)
         End Get
     End Property
 
@@ -42,9 +35,9 @@ Public Class Loro
         End Set
     End Property
 
-    Function calcularEdad(value As Date) As UShort
+    Private Function calcularEdad(value As Date) As UShort
         Dim hoy As Date = Date.Now()
-        Dim edad As Int16
+        Dim edad As UShort
         edad = (hoy.Year) - (value.Year)
         If (hoy.Month < value.Month) Then
             edad -= 1
@@ -55,7 +48,7 @@ Public Class Loro
     End Function
 
     Sub escuchar(frase As String)
-        Memoria.Enqueue(frase)
+        _memoria.Enqueue(frase)
     End Sub
 
     Function ToString() As String
@@ -64,8 +57,8 @@ Public Class Loro
 
     Private frase As String
     Function hablar() As String
-        If Memoria.Count <> 0 Then
-            frase += Memoria.Dequeue()
+        If _memoria.Count <> 0 Then
+            frase += _memoria.Dequeue()
             Return frase
         End If
         Return ""
