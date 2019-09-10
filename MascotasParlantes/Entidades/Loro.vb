@@ -1,14 +1,11 @@
 Public Class Loro
-
+    Protected memoria As Queue(Of String)
     Public Sub New()
-        _memoria = New Queue(Of String)
+        memoria = New Queue(Of String)
         Nombre = ""
-        FechaNacimiento = Date.Today()
+        FechaNacimiento = Date.Now
     End Sub
-    Private _memoria As Queue(Of String)
 
-
-    Private _edad As Short
     Public ReadOnly Property Edad As Short
         Get
             Return calcularEdad(FechaNacimiento)
@@ -47,20 +44,20 @@ Public Class Loro
         Return edad
     End Function
 
-    Sub escuchar(frase As String)
-        _memoria.Enqueue(frase)
+    Public Overridable Sub escuchar(frase As String)
+        memoria.Enqueue(frase)
     End Sub
 
-    Function ToString() As String
+    Public Overrides Function ToString() As String
         Return Nombre
     End Function
 
     Private frase As String
-    Function hablar() As String
-        If _memoria.Count <> 0 Then
-            frase += _memoria.Dequeue()
-            Return frase
+    Public Function hablar() As String
+        If memoria.Count <> 0 Then
+            frase += memoria.Dequeue()
+
         End If
-        Return ""
+        Return frase
     End Function
 End Class

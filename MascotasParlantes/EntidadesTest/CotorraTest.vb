@@ -15,7 +15,8 @@ Public Module CotorraTest
 
         cotorra1.escuchar("papita ")
         cotorra1.escuchar("nada")
-        cotorra1.escuchar("pa la cotorra")
+        cotorra1.escuchar("pa la cotorra ")
+        cotorra1.escuchar("nada")
 
         Console.WriteLine(cotorra1.hablar())
         Console.WriteLine(cotorra1.hablar())
