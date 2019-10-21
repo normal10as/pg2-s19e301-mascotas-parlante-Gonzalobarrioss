@@ -27,7 +27,7 @@ Module LoroTest
         Console.WriteLine(loro1.hablar())
 
 
-        Console.WriteLine("Probando sobrecarga ToString():")
+        Console.WriteLine("ToString():")
         Console.WriteLine(loro1.ToString())
     End Sub
 End Module

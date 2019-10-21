@@ -3,8 +3,6 @@
 
     Public Sub New()
         MyBase.New()
-        Nombre = ""
-        FechaNacimiento = Date.Now
         memoria = New Queue(Of String)
     End Sub
 
@@ -14,13 +12,15 @@
         End Get
     End Property
 
-    Dim OnOff As Integer = 0
+    Dim TrueFalse As Integer = 0
     Public Overrides Sub escuchar(frase As String)
-        If OnOff Mod 2 = 0 Then
+        If TrueFalse Mod 2 = 0 Then
             memoria.Enqueue(frase)
         End If
-        OnOff += 1
+        TrueFalse += 1
     End Sub
 
-
+    Public Overrides Function ToString() As String
+        Return Nombre
+    End Function
 End Class

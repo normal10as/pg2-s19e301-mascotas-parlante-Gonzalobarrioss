@@ -22,7 +22,11 @@ Public Module CotorraTest
         Console.WriteLine(cotorra1.hablar())
         Console.WriteLine(cotorra1.hablar())
         Console.WriteLine(cotorra1.hablar())
+
+        Console.WriteLine("ToString():")
+        Console.WriteLine(cotorra1.ToString())
     End Sub
+
 
 
 End Module

@@ -54,9 +54,8 @@ Public Class Loro
 
     Private frase As String
     Public Function hablar() As String
-        If memoria.Count <> 0 Then
+        If memoria.Count > 0 Then
             frase += memoria.Dequeue()
-
         End If
         Return frase
     End Function
