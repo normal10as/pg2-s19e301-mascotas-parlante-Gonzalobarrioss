@@ -1,6 +1,5 @@
 ﻿Public Class Cotorra
     Inherits Loro
-
     Public Sub New()
         MyBase.New()
         memoria = New Queue(Of String)

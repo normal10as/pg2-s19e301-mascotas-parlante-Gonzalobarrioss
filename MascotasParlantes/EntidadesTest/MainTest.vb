@@ -1,6 +1,7 @@
 ﻿Module MainTest
     Sub main()
-        Loro()
-        cotorra()
+        'Loro()
+        'cotorra()
+        jaula()
     End Sub
 End Module
