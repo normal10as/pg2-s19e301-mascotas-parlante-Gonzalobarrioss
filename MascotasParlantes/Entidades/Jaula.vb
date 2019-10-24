@@ -15,7 +15,6 @@
         End Set
     End Property
 
-    Private _cotorras As List(Of Cotorra)
     Private _loro As Loro
     Public Property Loro As Loro
         Get
@@ -26,11 +25,11 @@
         End Set
     End Property
 
+    Private _cotorras As List(Of Cotorra)
     Sub addCotorra(cotorra As Cotorra)
         If _cotorras.Count < 3 Then
             _cotorras.Add(cotorra)
         End If
-
     End Sub
 
     Function getAllCotorras() As List(Of Cotorra)

@@ -1,5 +1,5 @@
 Public Class Loro
-    Protected memoria As Queue(Of String)
+    Private memoria As Queue(Of String)
     Public Sub New()
         memoria = New Queue(Of String)
         Nombre = ""
